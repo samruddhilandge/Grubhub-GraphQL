@@ -1,10 +1,10 @@
-# Lab3-014336816
+# Grubhub(GraphQL)
 
-## Open Backend, do npm install
-## Open Frontend, do npm install
+### Open Backend, run command "npm install"
+### Open Frontend, run command "npm install"
 
-## To run Backend,
-### run nodemon
+### To run Backend,
+* run command "nodemon"
 
-## To run Frontend
-### run npm start
+### To run Frontend
+* run command "npm start"
