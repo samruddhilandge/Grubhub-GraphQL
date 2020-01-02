@@ -56,14 +56,14 @@ const addSectionResult = new GraphQLObjectType({
   })
 });
 
-// const UpdateBuyerProfileResult= new GraphQLObjectType({
-//     name: 'UpdateBuyerProfileResult',
-//     fields: () => ({
-//         responseMessage: { type: GraphQLString },
-//         name: { type: GraphQLString },
-//         email:{ type: GraphQLString }
-//     })
-// });
+const UpdateBuyerProfileResult= new GraphQLObjectType({
+    name: 'UpdateBuyerProfileResult',
+    fields: () => ({
+        responseMessage: { type: GraphQLString },
+        name: { type: GraphQLString },
+        email:{ type: GraphQLString }
+    })
+});
 const BuyerType = new GraphQLObjectType({
   name: "Buyer",
   fields: () => ({
@@ -141,7 +141,7 @@ const RootQuery = new GraphQLObjectType({
         return courseList;
       }
     }
-    /* buyer:{
+     buyer:{
             type:BuyerType,
             args:{
                 name:{type:GraphQLString},
@@ -162,51 +162,51 @@ const RootQuery = new GraphQLObjectType({
 
             }
         }
-        ,*/
-    // owner:{
-    //     type:OwnerType,
-    //     args:{
-    //         name:{type:GraphQLString},
-    //         email:{type:GraphQLString},
-    //         password:{type:GraphQLString}
-    //     },
-    //     resolve(parent,args){
+        ,
+    owner:{
+        type:OwnerType,
+        args:{
+            name:{type:GraphQLString},
+            email:{type:GraphQLString},
+            password:{type:GraphQLString}
+        },
+        resolve(parent,args){
 
-    //         User.findOne({
-    //             email: args.email
-    //         }).then(function(data,err){
+            User.findOne({
+                email: args.email
+            }).then(function(data,err){
 
-    //             if(data){
-    //             console.log("Owner Data is ",data);
-    //             }
-    //         }
-    //         )
+                if(data){
+                console.log("Owner Data is ",data);
+                }
+            }
+            )
 
-    //     }
+        }
 
-    // }
+    }
 
-    //     author:{
+        author:{
 
-    //         type:AuthorType,
-    //         args:{id:{type:GraphQLID}},
-    //         resolve(parent,args){
-    //             return _.find(authors,{id:args.id});
-    //         }
-    //     },
+            type:AuthorType,
+            args:{id:{type:GraphQLID}},
+            resolve(parent,args){
+                return _.find(authors,{id:args.id});
+            }
+        },
 
-    //     books:{
-    //         type:new GraphQLList(BookType),
-    //     resolve(parent,args){
-    //         return books;
-    //     }
-    // },
-    //     authors:{
-    //         type:new GraphQLList(AuthorType),
-    //         resolve(parent,args){
-    //             return authors;
-    //         }
-    //     }
+        books:{
+            type:new GraphQLList(BookType),
+        resolve(parent,args){
+            return books;
+        }
+    },
+        authors:{
+            type:new GraphQLList(AuthorType),
+            resolve(parent,args){
+                return authors;
+            }
+        }
   }
 });
 
