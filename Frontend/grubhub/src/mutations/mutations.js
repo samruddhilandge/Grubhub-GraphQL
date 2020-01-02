@@ -19,25 +19,25 @@ mutation signinBuyer($email: String!,$password: String!)
 }`
 ;
 
-// const updateBuyerProfile = gql`
-// mutation updateBuyerProfile($email: String!, $name: String!) {
-//     updateBuyerProfile( email: $email, name: $name ) {
+const updateBuyerProfile = gql`
+mutation updateBuyerProfile($email: String!, $name: String!) {
+    updateBuyerProfile( email: $email, name: $name ) {
         
-//         name
-//         email
-//     }
-// }`;
+        name
+        email
+    }
+}`;
 
-// const updateOwnerProfile = gql`
-// mutation updateOwnerProfile($email: String!, $name: String!,$restaurant_name:String!,$cuisine:String!) {
-//     updateOwnerProfile( email: $email, name: $name,restaurant_name:$restaurant_name ,cuisine:$cuisine) {
+const updateOwnerProfile = gql`
+mutation updateOwnerProfile($email: String!, $name: String!,$restaurant_name:String!,$cuisine:String!) {
+    updateOwnerProfile( email: $email, name: $name,restaurant_name:$restaurant_name ,cuisine:$cuisine) {
         
-//         name
-//         email
-//         restaurant_name
-//         cuisine
-//     }
-// }`;
+        name
+        email
+        restaurant_name
+        cuisine
+    }
+}`;
 
     const signupOwnermutation = gql`
     mutation signupOwner($email: String!, $name: String!,$password: String!,$restaurant_name: String!,$cuisine: String!)
